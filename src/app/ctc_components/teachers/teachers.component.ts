@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { LazyLoadEvent, SelectItem } from 'primeng/api/public_api';
+import { Teachers } from 'src/app/models/teachers';
+import { TeachersService } from 'src/app/services/teachers.service';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-teachers',
@@ -7,9 +13,75 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeachersComponent implements OnInit {
 
-  constructor() { }
+  private ngUnsubscribe = new Subject();
+  datasource: Teachers[];
+  teachers: Teachers[];
+  totalRecords: number;
+  cols: any[];
+  @ViewChild('myFiltersDiv') myFiltersDiv: ElementRef;
+  qualification: any[];
+  experience: any[];
+  loading: boolean;
 
-  ngOnInit(): void {
+  constructor(private teachersService: TeachersService, private router: Router) {
+    this.qualification = [
+      { name: 'B.Tech' },
+      { name: 'B.Ed' },
+      { name: 'B.sc' }
+    ];
+    this.experience = [
+      { name: '0-1(yrs)' },
+      { name: '1-2(yrs)' },
+      { name: '2-3(yrs)' },
+      { name: '3-4(yrs)' },
+      { name: '4-5(yrs)' },
+      { name: '5-6(yrs)' },
+      { name: '6-7(yrs)' },
+      { name: '7-8(yrs)' },
+      { name: '8-9(yrs)' },
+      { name: '9-10(yrs)' },
+      { name: '10-12(yrs)' },
+      { name: '12-15(yrs)' },
+      { name: '15-20(yrs)' },
+      { name: '>20(yrs)' }
+    ];
+    this.teachers = []
   }
 
+  toggleClass($event: any) {
+    if (this.myFiltersDiv.nativeElement.classList.contains('transform-active'))
+      this.myFiltersDiv.nativeElement.classList.remove('transform-active')
+    else
+      this.myFiltersDiv.nativeElement.classList.add('transform-active')
+  }
+
+  public ngOnInit() {
+    this.teachersService.getTeachers();
+    this.teachersService.teachersJson.pipe(takeUntil(this.ngUnsubscribe)).subscribe(teachers => {
+      this.datasource = teachers;
+      this.totalRecords = this.datasource.length;
+    });
+    this.cols = [
+      { field: 'teachername', header: 'Teacher Name' },
+      { field: 'dob', header: 'Date Of Birth' },
+      { field: 'qualification', header: 'Qualification' },
+      { field: 'email', header: 'Email' },
+      { field: 'mobilenumber', header: 'Mobile Number' },
+      { field: 'experience', header: 'Experience' },
+      { field: 'expertise', header: 'Expertise' },
+      { field: 'classes', header: 'Classes' },
+      { field: 'sections', header: 'Sections' }
+    ];
+    this.loading = true;
+  }
+
+  loadCarsLazy(event: LazyLoadEvent) {
+    this.loading = true;
+    setTimeout(() => {
+      if (this.datasource) {
+        this.teachers = this.datasource.slice(event.first, (event.first + event.rows));
+        this.loading = false;
+      }
+    }, 1000);
+  }
 }
