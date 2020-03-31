@@ -14,7 +14,7 @@
     </div>
 
     <div #myFiltersDiv class="col-md-12 box transform">
-        <div class="row search-box">   
+        <div class="row search-box">
             <div class="col-md-3">
                 <span>Title</span><br>
                 <input id="input" class="w-100" type="text" placeholder="Title" size="30" pInputText>
@@ -25,7 +25,8 @@
             </div>
             <div class="col-md-3">
                 <span>Created Date</span><br>
-                <p-calendar placeholder="Select Date" [inputStyle]="{'width':'100% !important'}"  [showIcon]="true"></p-calendar>
+                <p-calendar placeholder="Select Date" [inputStyle]="{'width':'100% !important'}" [showIcon]="true">
+                </p-calendar>
             </div>
             <div class="col-md-3">
                 <span>Created By</span><br>
@@ -43,7 +44,7 @@
     <div class="col-md-12 search-box">
         <p-table #dt [columns]="cols" [value]="exams" [lazy]="true" (onLazyLoad)="loadCarsLazy($event)"
             [paginator]="true" [rows]="10" [totalRecords]="totalRecords" [loading]="loading" [responsive]="true"
-            [reorderableColumns]="true" dataKey="firstname">               
+            [reorderableColumns]="true" dataKey="firstname">
             <ng-template pTemplate="header" let-columns>
                 <tr>
                     <th *ngFor="let col of columns" [pSortableColumn]="col.field" pReorderableColumn
@@ -51,7 +52,7 @@
                         <div class="">
                             {{col.header}}
                             <p-sortIcon [field]="col.field" style="float:right"></p-sortIcon>
-                        </div>   
+                        </div>
                     </th>
                 </tr>
             </ng-template>
