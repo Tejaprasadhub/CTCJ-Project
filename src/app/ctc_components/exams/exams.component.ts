@@ -22,9 +22,9 @@ export class ExamsComponent implements OnInit {
 
   constructor(private examsService: ExamsService, private router: Router) {
     this.exams = [];
-   }
+  }
 
-   public ngOnInit() {
+  public ngOnInit() {
     this.examsService.getExams();
     this.examsService.examsJson.pipe(takeUntil(this.ngUnsubscribe)).subscribe(exams => {
       this.datasource = exams;
