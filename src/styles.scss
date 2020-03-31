@@ -25,6 +25,40 @@ body{
  .lightblue{
      color:#448fab;
  }
+p-dropdown.required,p-calendar.required,p-multiSelect.required{
+    border-left: none !important;
+}
+p-dropdown.required .ui-dropdown,p-calendar.required .ui-calendar .ui-inputtext,p-multiSelect.required .ui-multiselect{
+    border-left: 3px solid #e32315 !important;
+}
+.ui-inputtext{
+width: 100% !important;
+}
+
+// p-dropdown.error .ui-dropdown,p-calendar.error .ui-calendar .ui-inputtext,p-multiSelect.error .ui-multiselect{
+//     background-color: rgb(245, 179, 179) !important;
+// }
+ .required{
+     border-left: 3px solid #e32315 !important;
+ }
+ .requiredLabel{
+     border-left: 3px solid #e32315;
+     padding: 5px !important;
+ }
+ .error-block{
+    background: #e9d3d3;
+    color: #e32315;
+    font-size: 14px;
+    font-family: inherit;
+    padding: 20px;
+ }
+ .error.ui-inputtext,p-calendar.error .ui-calendar .ui-inputtext,p-dropdown.error .ui-dropdown,p-multiSelect.error .ui-multiselect{
+     border-top:1px solid #e32315 !important;
+     border-right: 1px solid #e32315 !important;
+     border-bottom: 1px solid #e32315 !important;
+     background-color: rgb(247, 230, 230) !important;
+ }
+
 
  
 .blue:hover:not(.fa),.blue:focus:not(.fa){
@@ -68,6 +102,19 @@ body{
     width: 200px !important;
     right: 20px !important;
     left: auto !important ;
+}
+
+.ui-multiselect{
+    width: 100% !important;
+}
+.ui-multiselect-panel .ui-multiselect-items .ui-multiselect-item.ui-state-highlight {
+    color: #ffffff;
+    background-color: #448fab !important;
+}
+.ui-chkbox .ui-chkbox-box.ui-state-active {
+    border-color: #448fab !important;
+    background-color: #448fab !important;
+    color: #ffffff;
 }
 
 .component-header .ui-button.ui-state-default.ui-button-secondary{

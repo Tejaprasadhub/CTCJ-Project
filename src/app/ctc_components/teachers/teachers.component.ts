@@ -55,6 +55,10 @@ export class TeachersComponent implements OnInit {
       this.myFiltersDiv.nativeElement.classList.add('transform-active')
   }
 
+  addNew($event:any){
+    this.router.navigateByUrl("Teachers/add-teacher");
+  }
+
   public ngOnInit() {
     this.teachersService.getTeachers();
     this.teachersService.teachersJson.pipe(takeUntil(this.ngUnsubscribe)).subscribe(teachers => {
