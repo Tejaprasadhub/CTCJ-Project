@@ -14,7 +14,6 @@ import { TeachersComponent } from './ctc_components/teachers/teachers.component'
 import { UsersComponent } from './ctc_components/users/users.component';
 import { ExamsComponent } from './ctc_components/exams/exams.component';
 import { ClassesComponent } from './ctc_components/classes/classes.component';
-import { SectionsComponent } from './ctc_components/sections/sections.component';
 
 
 // primeng module div section
@@ -51,7 +50,6 @@ import { StudentmoreComponent } from './ctc_components/students/studentmore/stud
     UsersComponent,
     ExamsComponent,
     ClassesComponent,
-    SectionsComponent,
     StudentlayoutComponent,
     StudentprofileComponent,
     StudenteditComponent,
