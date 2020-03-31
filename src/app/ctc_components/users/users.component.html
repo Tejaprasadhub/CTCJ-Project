@@ -1,1 +1,36 @@
-<p>users updated </p>
+<div class="container-fluid">
+    <div class="col-md-12 component-header">
+      <div class="row">
+          <div class="ui-grid-col-2 drop">
+          <p-dropdown [options]="cities1" [(ngModel)]="selectedCity1"></p-dropdown>
+          </div>
+          <div class="ui-grid-col-2 username">
+              <input type="text" size="30" pInputText placeholder="Username" />
+          </div>
+          <div class="ui-grid-col-2 disname">
+              <input type="text" size="25" pInputText placeholder="Displayname" />
+          </div>
+          <div class="ui-grid-col-2 password">
+          <input type="password" size="25" pPassword placeholder="Password" />
+          </div>
+      </div>
+  </div>
+<br>
+<br>
+   <div class="col-md-12 component-header">
+          <div class="row">
+          <div class="ui-grid-col-2 drop1">
+          <p-dropdown [options]="userstat" [(ngModel)]="selectedCity1"></p-dropdown>
+          </div>
+          </div>
+      </div>
+
+<button pButton type="button" label="Save" (click)="handleClick($event)"></button>
+
+
+
+
+
+
+
+</div>
