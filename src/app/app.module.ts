@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule  } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CommonModule } from '@angular/common';
 
@@ -29,6 +30,7 @@ import {AccordionModule} from 'primeng/accordion';
 import {MultiSelectModule} from 'primeng/multiselect';
 import {CheckboxModule} from 'primeng/checkbox';
 import {RadioButtonModule} from 'primeng/radiobutton';
+import {InputTextareaModule} from 'primeng/inputtextarea';
 
 import { StudentlayoutComponent } from './ctc_components/students/studentlayout/studentlayout.component';
 import { StudentprofileComponent } from './ctc_components/students/studentprofile/studentprofile.component';
@@ -36,6 +38,7 @@ import { StudenteditComponent } from './ctc_components/students/studentedit/stud
 import { StudentreportsComponent } from './ctc_components/students/studentreports/studentreports.component';
 import { StudentmarksComponent } from './ctc_components/students/studentmarks/studentmarks.component';
 import { StudentmoreComponent } from './ctc_components/students/studentmore/studentmore.component';
+import { AddTeacherComponent } from './ctc_components/teachers/add-teacher/add-teacher.component';
 
 
 
@@ -57,12 +60,14 @@ import { StudentmoreComponent } from './ctc_components/students/studentmore/stud
     StudenteditComponent,
     StudentreportsComponent,
     StudentmarksComponent,
-    StudentmoreComponent    
+    StudentmoreComponent,
+    AddTeacherComponent    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     CardModule,
     ButtonModule,
     TableModule,
@@ -75,7 +80,8 @@ import { StudentmoreComponent } from './ctc_components/students/studentmore/stud
     TabViewModule,
     AccordionModule,
     CheckboxModule,
-    RadioButtonModule
+    RadioButtonModule,
+    InputTextareaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

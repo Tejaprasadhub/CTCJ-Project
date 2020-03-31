@@ -8,6 +8,7 @@ import { ClassesComponent } from './ctc_components/classes/classes.component';
 import { SectionsComponent } from './ctc_components/sections/sections.component';
 import { StudentlayoutComponent } from './ctc_components/students/studentlayout/studentlayout.component';
 import { StudentdetailroutingModule } from './ctc_components/students/studentdetailrouting/studentdetailrouting.module';
+import { AddTeacherComponent } from './ctc_components/teachers/add-teacher/add-teacher.component';
 
 
 
@@ -27,6 +28,11 @@ const routes: Routes = [
   {
     path: 'Teachers',
     component: TeachersComponent,
+    data: { title: 'Teachers List' }
+  },
+   {
+    path: 'Teachers/add-teacher',
+    component: AddTeacherComponent,
     data: { title: 'Teachers List' }
   },
   {
