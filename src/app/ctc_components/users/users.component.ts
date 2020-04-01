@@ -1,5 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { cities } from 'src/app/models/cities';
+// 
+
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { LazyLoadEvent, SelectItem } from 'primeng/api/public_api';
+import { Users } from 'src/app/models/users';
+import { UsersService } from 'src/app/services/users.service';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -7,24 +15,60 @@ import { cities } from 'src/app/models/cities';
 })
 export class UsersComponent implements OnInit {
 
-  constructor() {
+  private ngUnsubscribe = new Subject();
+  datasource: Users[];
+  users: Users[];
+  totalRecords: number;
+  cols: any[];
+  @ViewChild('myFiltersDiv') myFiltersDiv: ElementRef;
+  usertype: any[];
+  experience: any[];
+  loading: boolean;
+  userstatus: { name: string; }[];
 
-        this.cities1 = [
-            {label:'Select User Type', value:null},
-            {label:'DataEntryOperator', value:{id:1, name: 'DataEntryOperator', code: 'NY'}},
-            {label:'Teacher', value:{id:2, name: 'Teacher', code: 'RM'}},
-            {label:'Admin', value:{id:3, name: 'Admin', code: 'LDN'}}
-        ];
-        this.userstat = [
-            {label:'Status', value:null},
-            {label:'Active', value:{id:1, name: 'Active', code: 'AC'}},
-            {label:'InActive', value:{id:2, name: 'InActive', code: 'InAC'}},
-        
-        ];
-
-   }
-
-  ngOnInit(): void {
+  constructor(private usersService: UsersService, private router: Router) {
+    this.usertype = [
+      { name: 'Admin' },
+      { name: 'DataEntryOperator' },
+      { name: 'Teacher' }
+    ];
+    this.userstatus = [
+      { name: 'Active' },
+      { name: 'InActive' }
+    ];
+    this.users = []
   }
 
+  toggleClass($event: any) {
+    if (this.myFiltersDiv.nativeElement.classList.contains('transform-active'))
+      this.myFiltersDiv.nativeElement.classList.remove('transform-active')
+    else
+      this.myFiltersDiv.nativeElement.classList.add('transform-active')
+  }
+
+  public ngOnInit() {
+    this.usersService.getUsers();
+    this.usersService.usersJson.pipe(takeUntil(this.ngUnsubscribe)).subscribe(users => {
+      this.datasource = users;
+      this.totalRecords = this.datasource.length;
+    });
+    this.cols = [
+      { field: 'usertype', header: 'User Type' },
+      { field: 'name', header: 'User Name' },
+      { field: 'displayname', header: 'Display Name' },
+      { field: 'password', header: 'Password' },
+      { field: 'userstatus', header: 'User Status' }
+    ];
+    this.loading = true;
+  }
+
+  loadCarsLazy(event: LazyLoadEvent) {
+    this.loading = true;
+    setTimeout(() => {
+      if (this.datasource) {
+        this.users = this.datasource.slice(event.first, (event.first + event.rows));
+        this.loading = false;
+      }
+    }, 1000);
+  }
 }
