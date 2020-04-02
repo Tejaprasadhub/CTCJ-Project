@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Gender } from 'src/app/models/gender';
 import { SelectItem } from 'primeng/api/selectitem';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { toBase64String } from '@angular/compiler/src/output/source_map';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-teacher',
@@ -19,7 +21,9 @@ export class AddTeacherComponent implements OnInit {
   //to create Teacher From 
   addTeacherForm: FormGroup;
   formSubmitAttempt: boolean = false;
-  constructor(private fb: FormBuilder) {
+  errorMessage:string="";
+  successMessage:string="";
+  constructor(private fb: FormBuilder, private router: Router) {
     this.gender = [
       { name: 'Male', code: 'M' },
       { name: 'Female', code: 'F' }
@@ -58,6 +62,8 @@ export class AddTeacherComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // this.successMessage="Your changes have been successfully saved";
+    // this.errorMessage="Error in adding teacher";
     this.addTeacherForm = this.fb.group({
       'teacherName': new FormControl('', { validators: [Validators.required,Validators.pattern('^([A-Za-z0-9 _\'-])*$')]}),
       'dateofbirth': new FormControl('', { validators: [Validators.required] }),
@@ -75,7 +81,37 @@ export class AddTeacherComponent implements OnInit {
   }
 
   addTeacherSubmit(): void {
+    this.errorMessage="";
+    this.successMessage="";
     this.formSubmitAttempt = true;
+    if(this.addTeacherForm.valid){
+      this.formSubmitAttempt=false;
+      console.log(this.addTeacherForm.value);
+      this.addTeacherForm.reset();
+      this.successMessage="Your changes have been successfully saved";
+    }
+  }
+  resetForm():void{
+    this.addTeacherForm.reset();
+    this.successMessage="";
+  }
+  list():void{
+    this.router.navigateByUrl("Teachers");
+  }
+
+  private reset(){
+    this.addTeacherForm=this.fb.group({
+      'teacherName': new FormControl(''),
+      'dateofbirth': new FormControl(''),
+      'gender': new FormControl(''),
+      'qualification': new FormControl(''),
+      'experience': new FormControl(''),
+      'mobile': new FormControl(''),
+      'email': new FormControl(''),
+      'expertiseIn': new FormControl(''),
+      'associatedClasses': new FormControl(''),
+      'associatedSections': new FormControl('')
+    })
   }
 
 }

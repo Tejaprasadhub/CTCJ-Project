@@ -41,22 +41,54 @@ width: 100% !important;
  .required{
      border-left: 3px solid #e32315 !important;
  }
- .requiredLabel{
-     border-left: 3px solid #e32315;
-     padding: 5px !important;
+ .required-block{
+     display: block;
+     font-size: 12px;
+     margin-top: 9px;
+ }
+ .requirednote{
+     margin-left: 4px;
+     color: #e32315;
  }
  .error-block{
-    background: #e9d3d3;
+    background: #FFF3F3;
     color: #e32315;
     font-size: 14px;
     font-family: inherit;
-    padding: 20px;
+    padding: 10px;
+ }
+ .success-block{
+     background:#c5ddc5;
+     color: green;
+     font-size: 14px;
+     font-family: inherit;
+     padding: 10px;
+ }
+ .ui-state-disabled,.ui-widget:disabled{
+     opacity: unset !important;
+     border: 1px solid #efefee;
+     cursor: default !important;
+     background-color:#efefee;
+     color: #282a2e;
+ }
+ .error-block i,.success-block i{
+    font-size: 20px;
+    margin-right: 10px;
+    float: left;
+ }
+ .error-block .error-div{
+    font-weight: bold;
+    font-size: 12px;
+ }
+ .error-block .error-div i{
+    padding: 5px 0px;
+    font-size: 8px;
  }
  .error.ui-inputtext,p-calendar.error .ui-calendar .ui-inputtext,p-dropdown.error .ui-dropdown,p-multiSelect.error .ui-multiselect{
      border-top:1px solid #e32315 !important;
      border-right: 1px solid #e32315 !important;
      border-bottom: 1px solid #e32315 !important;
-     background-color: rgb(247, 230, 230) !important;
+     background: #FFF3F3 !important;
  }
 
 
