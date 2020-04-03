@@ -39,6 +39,19 @@ import { StudentmarksComponent } from './ctc_components/students/studentmarks/st
 import { StudentmoreComponent } from './ctc_components/students/studentmore/studentmore.component';
 import { AddTeacherComponent } from './ctc_components/teachers/add-teacher/add-teacher.component';
 import { AddUserComponent } from './ctc_components/users/add-user/add-user.component';
+import { LoginComponent } from './ctc_components/login/login.component';
+import { ChangePasswordComponent } from './ctc_components/change-password/change-password.component';
+import { SectionsComponent } from './ctc_components/sections/sections.component';
+import { DashboardComponent } from './ctc_components/dashboard/dashboard.component';
+import { MyProfileComponent } from './ctc_components/my-profile/my-profile.component';
+import { RoleAccessComponent } from './ctc_components/role-access/role-access.component';
+import { SettingsComponent } from './ctc_components/settings/settings.component';
+import { AboutUsComponent } from './ctc_components/about-us/about-us.component';
+import { StatisticsComponent } from './ctc_components/statistics/statistics.component';
+import { AddStudentComponent } from './ctc_components/students/add-student/add-student.component';
+import { AddSectionComponent } from './ctc_components/students/add-section/add-section.component';
+import { AddExamComponent } from './ctc_components/exams/add-exam/add-exam.component';
+import { AddClassComponent } from './ctc_components/classes/add-class/add-class.component';
 
 
 
@@ -61,7 +74,20 @@ import { AddUserComponent } from './ctc_components/users/add-user/add-user.compo
     StudentmarksComponent,
     StudentmoreComponent,
     AddTeacherComponent,
-    AddUserComponent    
+    AddUserComponent,
+    LoginComponent,
+    ChangePasswordComponent,
+    SectionsComponent,
+    DashboardComponent,
+    MyProfileComponent,
+    RoleAccessComponent,
+    SettingsComponent,
+    AboutUsComponent,
+    StatisticsComponent,
+    AddStudentComponent,
+    AddSectionComponent,
+    AddExamComponent,
+    AddClassComponent    
   ],
   imports: [
     BrowserModule,
