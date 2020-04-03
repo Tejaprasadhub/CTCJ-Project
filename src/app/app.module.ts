@@ -49,9 +49,10 @@ import { SettingsComponent } from './ctc_components/settings/settings.component'
 import { AboutUsComponent } from './ctc_components/about-us/about-us.component';
 import { StatisticsComponent } from './ctc_components/statistics/statistics.component';
 import { AddStudentComponent } from './ctc_components/students/add-student/add-student.component';
-import { AddSectionComponent } from './ctc_components/students/add-section/add-section.component';
+import { AddSectionComponent } from './ctc_components/sections/add-section/add-section.component';
 import { AddExamComponent } from './ctc_components/exams/add-exam/add-exam.component';
 import { AddClassComponent } from './ctc_components/classes/add-class/add-class.component';
+
 
 
 
