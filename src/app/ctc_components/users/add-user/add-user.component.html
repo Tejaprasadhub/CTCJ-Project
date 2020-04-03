@@ -1,0 +1,118 @@
+<div class="container-fluid">
+    <div class="col-md-12 component-header">
+        <div class="row">
+            <div class="col-md-4">
+                <span class="table-header-items">Add User</span>
+            </div>
+        </div>
+    </div>
+    <form  [formGroup]="addUserForm" class="col-md-12" (ngSubmit)="addUserSubmit()">
+        <div class="col-md-12 error-block animated fadeIn" *ngIf="(!addUserForm.valid && formSubmitAttempt)">
+            <div class="col-md-12">
+                <button class="close vp-alert-close" data-dismiss="alert">x</button>
+                <i class="fa fa-exclamation-triangle"></i>
+                <b>Please correct the following error(s):</b>
+            </div>
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-3" *ngIf="((!addUserForm.controls['usertype'].valid && addUserForm.controls['usertype'].touched)|| (!addUserForm.controls['usertype'].valid && addUserForm.controls['usertype'].untouched && formSubmitAttempt))">
+                        <span *ngIf="(addUserForm.controls['usertype'].errors?.required)">Please select "UserType"</span>                   
+                    </div>                    
+                <div class="col-md-3" *ngIf="((!addUserForm.controls['userName'].valid && addUserForm.controls['userName'].touched)|| (!addUserForm.controls['userName'].valid && addUserForm.controls['userName'].untouched && formSubmitAttempt))">
+                    <span *ngIf="(addUserForm.controls['userName'].errors?.required)">Enter "User Name"</span>
+                    <span *ngIf="(!addUserForm.controls['userName'].errors?.required && addUserForm.controls['userName'].errors?.pattern)">Enter Valid "User Name"</span>
+                </div>
+                <div class="col-md-3" *ngIf="((!addUserForm.controls['dispName'].valid && addUserForm.controls['dispName'].touched)|| (!addUserForm.controls['dispName'].valid && addUserForm.controls['dispName'].untouched && formSubmitAttempt))">
+                    <span *ngIf="(addUserForm.controls['dispName'].errors?.required)">Enter "Display Name"</span>
+                    <span *ngIf="(!addUserForm.controls['dispName'].errors?.required && addUserForm.controls['dispName'].errors?.pattern)">Enter Valid "Display Name"</span>
+                </div>                
+
+                <div class="col-md-3" *ngIf="((!addUserForm.controls['password'].valid && addUserForm.controls['password'].touched)|| (!addUserForm.controls['password'].valid && addUserForm.controls['password'].untouched && formSubmitAttempt))">
+                    <span *ngIf="(addUserForm.controls['password'].errors?.required)">Enter "Valid Password"</span>                   
+                </div>
+                <!-- <div class="col-md-3" *ngIf="((!addUserForm.controls['expertiseIn'].valid && addUserForm.controls['expertiseIn'].touched)|| (!addUserForm.controls['expertiseIn'].valid && addUserForm.controls['expertiseIn'].untouched && formSubmitAttempt))">
+                    <span *ngIf="(addUserForm.controls['expertiseIn'].errors?.required)">Enter "Expertise In"</span>                   
+                </div>
+                <div class="col-md-3" *ngIf="((!addUserForm.controls['associatedClasses'].valid && addUserForm.controls['associatedClasses'].touched)|| (!addUserForm.controls['associatedClasses'].valid && addUserForm.controls['associatedClasses'].untouched && formSubmitAttempt))">
+                    <span *ngIf="(addUserForm.controls['associatedClasses'].errors?.required)">Enter "Associated Class"</span>                   
+                </div>
+                <div class="col-md-3" *ngIf="((!addUserForm.controls['associatedSections'].valid && addUserForm.controls['associatedSections'].touched)|| (!addUserForm.controls['associatedSections'].valid && addUserForm.controls['associatedSections'].untouched && formSubmitAttempt))">
+                    <span *ngIf="(addUserForm.controls['associatedSections'].errors?.required)">Enter "Associated Section"</span>                   
+                </div> -->
+            </div>
+            </div>
+        </div> -->
+        <div class="row search-box form-block">
+            <div class="col-md-4">
+                <span>UserType</span><br>
+                <p-dropdown [options]="usertype" formControlName="usertype" class="w-100" placeholder="Select Usertype" optionLabel="name" [showClear]="true" class="required" [ngClass]="{'error':((!addUserForm.controls['usertype'].valid && addUserForm.controls['usertype'].touched) || (!addUserForm.controls['usertype'].valid && addUserForm.controls['usertype'].untouched && formSubmitAttempt))}"></p-dropdown>
+            </div>            
+            <div class="col-md-4">
+                <span>UserName</span><br>
+                <input id="input" class="w-100" formControlName="userName" type="text" placeholder="User Name" size="30" pInputText class="required" [ngClass]="{'error':((!addUserForm.controls['userName'].valid && addUserForm.controls['userName'].touched) || (!addUserForm.controls['userName'].valid && addUserForm.controls['userName'].untouched && formSubmitAttempt))}">
+            </div>            
+            <!-- <div class="col-md-4">
+                <span>Date Of Birth</span><br>
+                <p-calendar placeholder="Select Date" formControlName="dateofbirth" [inputStyle]="{'width':'100% !important'}"  [showIcon]="true" class="required" [ngClass]="{'error':((!addUserForm.controls['dateofbirth'].valid && addUserForm.controls['dateofbirth'].touched) || (!addUserForm.controls['dateofbirth'].valid && addUserForm.controls['dateofbirth'].untouched && formSubmitAttempt))}"></p-calendar>
+            </div>
+            <div class="col-md-4">
+                <span>Gender</span><br>
+                <p-dropdown [options]="gender" formControlName="gender" class="w-100" placeholder="Select Gender" optionLabel="name" [showClear]="true" class="required" [ngClass]="{'error':((!addUserForm.controls['gender'].valid && addUserForm.controls['gender'].touched) || (!addUserForm.controls['gender'].valid && addUserForm.controls['gender'].untouched && formSubmitAttempt))}"></p-dropdown>
+            </div> -->
+            <div class="col-md-4">
+                <span>DisplayName</span><br>
+                <input id="input" class="w-100" formControlName="dispName" type="text" placeholder="Display Name" size="30" pInputText class="required" [ngClass]="{'error':((!addUserForm.controls['dispName'].valid && addUserForm.controls['dispName'].touched) || (!addUserForm.controls['dispName'].valid && addUserForm.controls['dispName'].untouched && formSubmitAttempt))}">
+            </div>        
+            <div class="col-md-4">
+                <span>Password</span><br>
+                <input id="input" class="w-100" formControlName="password" type="password" placeholder="Enter Password" size="30" pInputText class="required" [ngClass]="{'error':((!addUserForm.controls['password'].valid && addUserForm.controls['password'].touched) || (!addUserForm.controls['password'].valid && addUserForm.controls['password'].untouched && formSubmitAttempt))}">
+            </div>               
+            
+            <!-- <input type="password" pPassword [(ngModel)]="property"/> -->
+
+
+
+
+            <!-- <div class="col-md-4">
+                <span>Experience</span><br>
+                <p-dropdown [options]="experience" formControlName="experience" class="w-100" placeholder="Select Experience" optionLabel="name" [showClear]="true" [ngClass]="{'error':((!addUserForm.controls['experience'].valid && addUserForm.controls['experience'].touched) || (!addUserForm.controls['experience'].valid && addUserForm.controls['experience'].untouched && formSubmitAttempt))}"></p-dropdown>
+            </div>
+            <div class="col-md-4">
+                <span>Mobile</span><br>
+                <input id="input" class="w-100" formControlName="mobile" type="text" placeholder="Enter Mobile" size="30" pInputText class="required" [ngClass]="{'error':((!addUserForm.controls['mobile'].valid && addUserForm.controls['mobile'].touched) || (!addUserForm.controls['mobile'].valid && addUserForm.controls['mobile'].untouched && formSubmitAttempt))}">
+            </div>    
+            <div class="col-md-4"> 
+                <span>Email</span><br>
+                <input id="input" class="w-100" formControlName="email" type="text" placeholder="Enter Email" size="30" pInputText [ngClass]="{'error':((!addUserForm.controls['email'].valid && addUserForm.controls['email'].touched) || (!addUserForm.controls['email'].valid && addUserForm.controls['email'].untouched && formSubmitAttempt))}">
+            </div>
+            <div class="col-md-4">
+                <span>Expertise In</span><br>
+                <p-multiSelect [options]="expertiseIn" formControlName="expertiseIn" class="w-100" class="required" [ngClass]="{'error':((!addUserForm.controls['expertiseIn'].valid && addUserForm.controls['expertiseIn'].touched) || (!addUserForm.controls['expertiseIn'].valid && addUserForm.controls['expertiseIn'].untouched && formSubmitAttempt))}"></p-multiSelect>
+            </div>
+            <div class="col-md-4">
+                <span>Associated Classes</span><br>
+                <p-multiSelect [options]="associatedClasses" formControlName="associatedClasses" class="w-100" class="required" [ngClass]="{'error':((!addUserForm.controls['associatedClasses'].valid && addUserForm.controls['associatedClasses'].touched) || (!addUserForm.controls['associatedClasses'].valid && addUserForm.controls['associatedClasses'].untouched && formSubmitAttempt))}"></p-multiSelect>
+            </div>
+            <div class="col-md-4">
+                <span>Associated Sections</span><br>
+                <p-multiSelect [options]="associatedSections" formControlName="associatedSections" class="w-100" class="required" [ngClass]="{'error':((!addUserForm.controls['associatedSections'].valid && addUserForm.controls['associatedSections'].touched) || (!addUserForm.controls['associatedSections'].valid && addUserForm.controls['associatedSections'].untouched && formSubmitAttempt))}"></p-multiSelect>
+            </div> -->
+            <div class="col-md-8"></div>
+            <br>
+            <br>
+            <br>
+            <div class="col-md-4 text-left">
+                <div class="d-flex">
+                    <div class="requiredLabel"></div>
+                    <div class="text" style="color:red">Required</div>
+                </div>                
+            </div>
+            <div class="col-md-8 text-right">
+                <button pButton type="submit" icon="pi pi-check" label="Submit"
+                    class="ui-button-secondary table-header-items"></button>&nbsp;
+                <button pButton type="button" icon="pi pi-times" label="Cancel"
+                    class="ui-button-secondary table-header-items"></button>
+            </div>
+        </div>
+    </form>
+</div>

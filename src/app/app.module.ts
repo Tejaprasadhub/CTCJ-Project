@@ -38,6 +38,7 @@ import { StudentreportsComponent } from './ctc_components/students/studentreport
 import { StudentmarksComponent } from './ctc_components/students/studentmarks/studentmarks.component';
 import { StudentmoreComponent } from './ctc_components/students/studentmore/studentmore.component';
 import { AddTeacherComponent } from './ctc_components/teachers/add-teacher/add-teacher.component';
+import { AddUserComponent } from './ctc_components/users/add-user/add-user.component';
 
 
 
@@ -59,7 +60,8 @@ import { AddTeacherComponent } from './ctc_components/teachers/add-teacher/add-t
     StudentreportsComponent,
     StudentmarksComponent,
     StudentmoreComponent,
-    AddTeacherComponent    
+    AddTeacherComponent,
+    AddUserComponent    
   ],
   imports: [
     BrowserModule,

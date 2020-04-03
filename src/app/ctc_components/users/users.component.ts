@@ -39,11 +39,22 @@ export class UsersComponent implements OnInit {
     this.users = []
   }
 
+
+
+
+
+
+
+
+
   toggleClass($event: any) {
     if (this.myFiltersDiv.nativeElement.classList.contains('transform-active'))
       this.myFiltersDiv.nativeElement.classList.remove('transform-active')
     else
       this.myFiltersDiv.nativeElement.classList.add('transform-active')
+  }
+  addNew($event:any){
+    this.router.navigateByUrl("Users/add-user");
   }
 
   public ngOnInit() {
