@@ -30,6 +30,7 @@ import {MultiSelectModule} from 'primeng/multiselect';
 import {CheckboxModule} from 'primeng/checkbox';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import {InputTextareaModule} from 'primeng/inputtextarea';
+import {PasswordModule} from 'primeng/password';
 
 import { StudentlayoutComponent } from './ctc_components/students/studentlayout/studentlayout.component';
 import { StudentprofileComponent } from './ctc_components/students/studentprofile/studentprofile.component';
@@ -108,7 +109,8 @@ import { AddClassComponent } from './ctc_components/classes/add-class/add-class.
     AccordionModule,
     CheckboxModule,
     RadioButtonModule,
-    InputTextareaModule
+    InputTextareaModule,
+    PasswordModule
   ],
   providers: [],
   bootstrap: [AppComponent]
