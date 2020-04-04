@@ -9,28 +9,27 @@ import { StudentlayoutComponent } from './ctc_components/students/studentlayout/
 import { StudentdetailroutingModule } from './ctc_components/students/studentdetailrouting/studentdetailrouting.module';
 import { AddTeacherComponent } from './ctc_components/teachers/add-teacher/add-teacher.component';
 import { AddUserComponent } from './ctc_components/users/add-user/add-user.component';
-
-
+import {ChangePasswordComponent} from './ctc_components/change-password/change-password.component';
 
 const routes: Routes = [
   {
     path: 'Students',
     component: StudentsComponent,
     data: { title: 'Students List' },
-    children:[
+    children: [
       {
         path: 'student',
         component: StudentlayoutComponent,
-        loadChildren:()=>import('../app/ctc_components/students/studentdetailrouting/studentdetailrouting.module').then(m=>m.StudentdetailroutingModule)
+        loadChildren: () => import('../app/ctc_components/students/studentdetailrouting/studentdetailrouting.module').then(m => m.StudentdetailroutingModule)
       }
-    ]    
-  },  
+    ]
+  },
   {
     path: 'Teachers',
     component: TeachersComponent,
     data: { title: 'Teachers List' }
   },
-   {
+  {
     path: 'Teachers/add-teacher',
     component: AddTeacherComponent,
     data: { title: 'Teachers List' }
@@ -39,7 +38,7 @@ const routes: Routes = [
     path: 'Users',
     component: UsersComponent,
     data: { title: 'Users List' }
-  }, 
+  },
   {
     path: 'Users/add-user',
     component: AddUserComponent,
@@ -55,7 +54,13 @@ const routes: Routes = [
     component: ClassesComponent,
     data: { title: 'Classes List' }
   },
-  { path: '',
+  {
+    path: 'ChangePassword',
+    component: ChangePasswordComponent,
+    data: { title: 'Change Password' }
+  },
+  {
+    path: '',
     redirectTo: '/Students',
     pathMatch: 'full'
   },
