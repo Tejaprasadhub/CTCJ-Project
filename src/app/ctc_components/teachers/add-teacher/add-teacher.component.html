@@ -102,22 +102,23 @@
             </div>
             <div class="col-md-4">
                 <span>Gender</span><br>
-                <p-dropdown [options]="gender" [disabled]="isDisabled" formControlName="gender" class="w-100" placeholder="Select Gender"
-                    optionLabel="name" [showClear]="true" 
-                    [ngClass]="{'error':((!addTeacherForm.controls['gender'].valid && addTeacherForm.controls['gender'].touched) || (!addTeacherForm.controls['gender'].valid && addTeacherForm.controls['gender'].untouched && formSubmitAttempt)),'required':(isRequired == true )}">
+                <p-dropdown [options]="gender"  filter="true" formControlName="gender" [disabled]="isDisabled" 
+                placeholder="Select Gender"
+                [ngClass]="{'error':((!addTeacherForm.controls['gender'].valid && addTeacherForm.controls['gender'].touched) || (!addTeacherForm.controls['gender'].valid && addTeacherForm.controls['gender'].untouched && formSubmitAttempt)),'required':(isRequired == true )}">
+             
                 </p-dropdown>
             </div>
             <div class="col-md-4">
                 <span>Qualification</span><br>
-                <p-dropdown [options]="qualification" [disabled]="isDisabled" formControlName="qualification" class="w-100"
-                    placeholder="Select Qualification" optionLabel="name" [showClear]="true" 
+                <p-dropdown [options]="qualification" filter="true" [disabled]="isDisabled" formControlName="qualification" class="w-100"
+                    placeholder="Select Qualification" 
                     [ngClass]="{'error':((!addTeacherForm.controls['qualification'].valid && addTeacherForm.controls['qualification'].touched) || (!addTeacherForm.controls['qualification'].valid && addTeacherForm.controls['qualification'].untouched && formSubmitAttempt)),'required':(isRequired == true )}">
                 </p-dropdown>
             </div>
             <div class="col-md-4">
                 <span>Experience</span><br>
-                <p-dropdown [options]="experience" [disabled]="isDisabled" formControlName="experience" class="w-100"
-                    placeholder="Select Experience" optionLabel="name" [showClear]="true"
+                <p-dropdown [options]="experience" filter="true" [disabled]="isDisabled" formControlName="experience" class="w-100"
+                    placeholder="Select Experience" 
                     [ngClass]="{'error':((!addTeacherForm.controls['experience'].valid && addTeacherForm.controls['experience'].touched) || (!addTeacherForm.controls['experience'].valid && addTeacherForm.controls['experience'].untouched && formSubmitAttempt))}">
                 </p-dropdown>
             </div>
