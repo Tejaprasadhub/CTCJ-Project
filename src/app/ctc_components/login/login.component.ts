@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  login: Login[];
   addLoginForm: FormGroup;
   formSubmitAttempt: boolean = false;
   constructor(private fb: FormBuilder, private router: Router) {
