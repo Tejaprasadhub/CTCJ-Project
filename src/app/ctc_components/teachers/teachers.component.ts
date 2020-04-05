@@ -17,6 +17,10 @@ export class TeachersComponent implements OnInit {
   datasource: Teachers[];
   teachers: Teachers[];
   totalRecords: number;
+  display:boolean=false;
+  position: string;
+  errorMessage:string="";
+  successMessage:string="";
   cols: any[];
   @ViewChild('myFiltersDiv') myFiltersDiv: ElementRef;
   qualification: any[];
@@ -56,9 +60,20 @@ export class TeachersComponent implements OnInit {
   }
 
   addNew($event:any){
-    this.router.navigateByUrl("Teachers/add-teacher");
+    this.router.navigateByUrl("Teachers/add-teacher?type=create");
   }
-
+  editTeacher():void{
+    this.router.navigateByUrl("Teachers/add-teacher?type=edit&id=1");
+  }
+  deleteTeacher():void{
+    this.position="top";
+    this.display=true;
+    this.successMessage="";
+  }
+  teacherRevoke():void{
+    this.display=false;
+    this.successMessage="Teacher deleted successfully"
+  }
   public ngOnInit() {
     this.teachersService.getTeachers();
     this.teachersService.teachersJson.pipe(takeUntil(this.ngUnsubscribe)).subscribe(teachers => {
@@ -66,11 +81,11 @@ export class TeachersComponent implements OnInit {
       this.totalRecords = this.datasource.length;
     });
     this.cols = [
-      { field: 'teachername', header: 'Teacher Name' },
-      { field: 'dob', header: 'Date Of Birth' },
+      { field: 'teachername', header: 'Name' },
+      { field: 'dob', header: 'DOB' },
       { field: 'qualification', header: 'Qualification' },
       { field: 'email', header: 'Email' },
-      { field: 'mobilenumber', header: 'Mobile Number' },
+      { field: 'mobilenumber', header: 'Mobile ' },
       { field: 'experience', header: 'Experience' },
       { field: 'expertise', header: 'Expertise' },
       { field: 'classes', header: 'Classes' },

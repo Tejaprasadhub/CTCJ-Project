@@ -56,6 +56,7 @@ width: 100% !important;
     font-size: 14px;
     font-family: inherit;
     padding: 10px;
+    margin-top: 5px;
  }
  .success-block{
      background:#c5ddc5;
@@ -63,13 +64,14 @@ width: 100% !important;
      font-size: 14px;
      font-family: inherit;
      padding: 10px;
+     margin-top: 5px;
  }
  .ui-state-disabled,.ui-widget:disabled{
      opacity: unset !important;
-     border: 1px solid #efefee;
+     border: 1px solid #efefee !important;
      cursor: default !important;
-     background-color:#efefee;
-     color: #282a2e;
+     background-color:#efefee !important;
+     color: #282a2e !important;
  }
  .error-block i,.success-block i{
     font-size: 20px;
@@ -90,8 +92,19 @@ width: 100% !important;
      border-bottom: 1px solid #e32315 !important;
      background: #FFF3F3 !important;
  }
-
-
+ .ui-table-wrapper .pi-pencil{
+    color: green !important;
+    font-size: 20px;
+    cursor: pointer;
+ }
+ .ui-table-wrapper .pi-trash{
+    color: red !important;
+    font-size: 20px;
+    cursor: pointer;
+ }
+ .ui-dialog-top{
+background-color: #635f5f59 !important;
+ }
  
 .blue:hover:not(.fa),.blue:focus:not(.fa){
     border: 2px solid #14145d;
@@ -149,11 +162,16 @@ width: 100% !important;
     color: #ffffff;
 }
 
-.component-header .ui-button.ui-state-default.ui-button-secondary{
+.ui-button.ui-state-default.ui-button-secondary{
     color: #4282b4 !important;
     background-color: #fff !important;
-    border: 1px solid #ccc;
+    border: 1px solid #ccc !important;
     border-radius:50px;
+}
+ .ui-button.ui-state-default.ui-button-secondary:hover{
+    border-color: #448fab !important;
+    background: #448fab !important;
+    color: #fff !important;
 }
 .info-container{
     border-left: 1px solid #ccc;
@@ -161,10 +179,12 @@ width: 100% !important;
   
   .transform {
      display: none;
-  }
-  
+  }  
   .transform-active {
       display: block;
+    //   visibility: visible;
+    //   opacity: 1;      
+    //   transition-delay: 10s !important;
   }
 
   .search-box{
@@ -200,6 +220,10 @@ width: 100% !important;
   }
   .ui-table .card-body{
       padding:2px !important
+  }
+  .ui-table-tbody a{
+      color:black;
+      text-decoration: none;
   }
   .ui-table .card-body .fa{
     font-size: 20px !important;
@@ -237,6 +261,21 @@ body .ui-accordion .ui-accordion-header:not(.ui-state-disabled).ui-state-active 
     border: 1px solid #448fab !important;
     color: #ffffff;
 }
+body .ui-dialog .ui-dialog-titlebar {
+    border: 1px solid #448fab !important;
+    background-color: #448fab !important;
+    color: #fff !important;
+    padding: 1em;
+    font-weight: 700;
+    border-bottom: 0 none;
+}
+body .ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-icon {
+    color: #fff !important;
+}
+.ui-dialog-footer .ui-button {
+    background-color: #448fab !important;
+    border: 1px solid #448fab !important;
+}
 body .ui-radiobutton .ui-radiobutton-box.ui-state-active:not(.ui-state-disabled):hover {
     border-color: #448fab !important;
     background-color: #448fab !important;
@@ -247,6 +286,21 @@ body .ui-radiobutton .ui-radiobutton-box.ui-state-active {
     border-color: #448fab;
     background-color: #448fab;
     color: #ffffff;
+}
+body .ui-table .ui-table-thead > tr > th {
+    padding: 0.5em 0.5em !important;
+    border: 1px solid #c8c8c8 !important;
+    font-weight: 700;
+    color: #fff !important;
+    background-color: #448fab !important;
+}
+body .ui-table .ui-sortable-column .ui-sortable-column-icon {
+    color: #fff !important;
+    font-size: 0.8em !important;
+}
+body .ui-paginator .ui-paginator-pages .ui-paginator-page.ui-state-active {
+    background-color: #448fab !important;
+    color: #ffffff !important;
 }
     
 //   table common styles ends here
