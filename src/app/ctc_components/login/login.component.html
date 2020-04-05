@@ -1,1 +1,51 @@
-<p>login works!</p>
+<form [formGroup]="addLoginForm" class="col-md-12" (ngSubmit)="addLoginSubmit()">
+    <div class="row form-block">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 login-div">
+            <div class="col-md-12">
+                <h3 class="text-center">
+                    <b>CTS APP</b>
+                </h3>
+            </div>
+            <div class="ui-inputgroup m-2">
+                <span class="ui-inputgroup-addon"><i class="fa fa-user "></i></span>
+                <input id="input" class="w-100" formControlName="userName" type="text" placeholder="User Name" size="30"
+                    pInputText class="required"
+                    [ngClass]="{'error':((!addLoginForm.controls['userName'].valid && addLoginForm.controls['userName'].touched) || (!addLoginForm.controls['userName'].valid && addLoginForm.controls['userName'].untouched && formSubmitAttempt))}">
+            </div>
+            <div class="ui-inputgroup m-2">
+                <span class="ui-inputgroup-addon"><i class="fa fa-lock"></i></span>
+
+                <input id="input" class="w-100" formControlName="password" type="password" placeholder="Enter Password"
+                    size="30" pInputText class="required"
+                    [ngClass]="{'error':((!addLoginForm.controls['password'].valid && addLoginForm.controls['password'].touched) || (!addLoginForm.controls['password'].valid && addLoginForm.controls['password'].untouched && formSubmitAttempt))}">
+            </div>
+            <div class="m-2">
+                <a href="" class="for text-center">Forgot Password</a>
+            </div>
+            <div class="m-2 text-center">
+                <button type="submit" class="btn btn-default btn-block btn-login">Login</button> 
+            </div>
+            <div class="col-md-12" *ngIf="(!addLoginForm.valid && formSubmitAttempt)">
+                <p *ngIf="((addLoginForm.controls['userName'].errors?.required) || (addLoginForm.controls['password'].errors?.required))">Please Enter Username or Password</p>
+                <p *ngIf="((!addLoginForm.controls['userName'].errors?.required && addLoginForm.controls['userName'].errors?.pattern) || (!addLoginForm.controls['password'].errors?.required && addLoginForm.controls['password'].errors?.pattern))">Please Enter Valid Username or Password</p>
+            </div> 
+                
+                 
+            
+        </div>
+
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4 sup-div">
+
+            <ul class="d-flex">
+                <li class="sup-li"><a href="#"><b>Contact Us</b></a></li>
+                <li class="sup-li"><a href="#"><b>Privacy Policy</b></a> </li>
+                <li style="list-style: none;padding:10px;"><a href="#"><b>Terms of Use</b></a> </li>
+            </ul>
+
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</form>
