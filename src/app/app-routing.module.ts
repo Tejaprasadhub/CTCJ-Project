@@ -82,7 +82,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/Students',
+    redirectTo: '/Login',
     pathMatch: 'full'
   },
 ];

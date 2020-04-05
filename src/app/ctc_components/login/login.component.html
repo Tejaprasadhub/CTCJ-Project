@@ -10,14 +10,14 @@
             <div class="ui-inputgroup m-2">
                 <span class="ui-inputgroup-addon"><i class="fa fa-user "></i></span>
                 <input id="input" class="w-100" formControlName="userName" type="text" placeholder="User Name" size="30"
-                    pInputText class="required"
+                    pInputText 
                     [ngClass]="{'error':((!addLoginForm.controls['userName'].valid && addLoginForm.controls['userName'].touched) || (!addLoginForm.controls['userName'].valid && addLoginForm.controls['userName'].untouched && formSubmitAttempt))}">
             </div>
             <div class="ui-inputgroup m-2">
                 <span class="ui-inputgroup-addon"><i class="fa fa-lock"></i></span>
 
                 <input id="input" class="w-100" formControlName="password" type="password" placeholder="Enter Password"
-                    size="30" pInputText class="required"
+                    size="30" pInputText 
                     [ngClass]="{'error':((!addLoginForm.controls['password'].valid && addLoginForm.controls['password'].touched) || (!addLoginForm.controls['password'].valid && addLoginForm.controls['password'].untouched && formSubmitAttempt))}">
             </div>
             <div class="m-2">
@@ -38,13 +38,11 @@
         <div class="col-md-4"></div>
         <div class="col-md-4"></div>
         <div class="col-md-4 sup-div">
-
-            <ul class="d-flex">
-                <li class="sup-li"><a href="#"><b>Contact Us</b></a></li>
-                <li class="sup-li"><a href="#"><b>Privacy Policy</b></a> </li>
-                <li style="list-style: none;padding:10px;"><a href="#"><b>Terms of Use</b></a> </li>
-            </ul>
-
+            <div class="row">
+                <div class="col-md-4 text-center li1"><a href="#"><b>Contact Us</b></a> </div>
+                <div class="col-md-4 text-center li2"><a href="#"><b>Privacy Policy</b></a></div>
+                <div class="col-md-4 text-center"><a href="#"><b>Terms of Use</b></a> </div>
+            </div>
         </div>
         <div class="col-md-4"></div>
     </div>

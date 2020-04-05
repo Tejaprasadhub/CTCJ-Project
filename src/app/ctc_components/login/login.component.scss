@@ -20,18 +20,16 @@
     background-color: #d69d33 !important;
     color: #fff;
 }
-.sup-div .sup-li{
-    list-style: none;
-    border-right: 1px solid black;
-    padding: 10px;
-}
+
 .sup-div{
     margin-top: 20px;
     box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px white, 0.3em 0.3em 1em rgba(70, 67, 67, 0);
-    padding: 10px 0px 0px 0px; 
-    height: 65px;
-
+    padding: 10px;
+    text-decoration: none;
 }
 .login-div p{
     color: red;
+}
+.sup-div .li1,.sup-div .li2{
+    border-right: 1px solid black;
 }
