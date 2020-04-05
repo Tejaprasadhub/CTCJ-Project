@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Users } from 'src/app/models/users';
-import { SelectItem } from 'primeng/api/selectitem';
+// import { SelectItem } from 'primeng/api/selectitem';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({

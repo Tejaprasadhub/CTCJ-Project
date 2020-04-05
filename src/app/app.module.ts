@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule  } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CommonModule } from '@angular/common';
@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { TopbarComponent } from './ctc_components/topbar/topbar.component';
 import { MenubarComponent } from './ctc_components/menubar/menubar.component';
 import { TilesComponent } from './ctc_components/tiles/tiles.component';
+import { LoginComponent } from './ctc_components/login/login.component';
 import { StudentsComponent } from './ctc_components/students/students.component';
 import { TeachersComponent } from './ctc_components/teachers/teachers.component';
 import { UsersComponent } from './ctc_components/users/users.component';
@@ -33,7 +34,6 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
 import {PasswordModule} from 'primeng/password'
 import {DialogModule} from 'primeng/dialog';
 
-
 import { StudentlayoutComponent } from './ctc_components/students/studentlayout/studentlayout.component';
 import { StudentprofileComponent } from './ctc_components/students/studentprofile/studentprofile.component';
 import { StudenteditComponent } from './ctc_components/students/studentedit/studentedit.component';
@@ -42,7 +42,7 @@ import { StudentmarksComponent } from './ctc_components/students/studentmarks/st
 import { StudentmoreComponent } from './ctc_components/students/studentmore/studentmore.component';
 import { AddTeacherComponent } from './ctc_components/teachers/add-teacher/add-teacher.component';
 import { AddUserComponent } from './ctc_components/users/add-user/add-user.component';
-import { LoginComponent } from './ctc_components/login/login.component';
+// import { LoginComponent } from './ctc_components/login/login.component';
 import { ChangePasswordComponent } from './ctc_components/change-password/change-password.component';
 import { SectionsComponent } from './ctc_components/sections/sections.component';
 import { DashboardComponent } from './ctc_components/dashboard/dashboard.component';
@@ -66,6 +66,7 @@ import { AddClassComponent } from './ctc_components/classes/add-class/add-class.
     TopbarComponent,
     MenubarComponent,
     TilesComponent,
+    LoginComponent,
     StudentsComponent,
     TeachersComponent,
     UsersComponent,

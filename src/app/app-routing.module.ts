@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginComponent } from './ctc_components/login/login.component';
 import { StudentsComponent } from './ctc_components/students/students.component';
 import { TeachersComponent } from './ctc_components/teachers/teachers.component';
 import { UsersComponent } from './ctc_components/users/users.component';
@@ -13,6 +14,7 @@ import { AddUserComponent } from './ctc_components/users/add-user/add-user.compo
 import {AddExamComponent} from './ctc_components/exams/add-exam/add-exam.component';
 import {ChangePasswordComponent} from './ctc_components/change-password/change-password.component';
 import { from } from 'rxjs';
+
 
 const routes: Routes = [
   {
@@ -38,6 +40,11 @@ const routes: Routes = [
     data: { title: 'Teachers List' }
   },
   {
+    path: 'Login',
+    component: LoginComponent,
+    data: { title: 'Login Details' }
+  }, 
+  {
     path: 'Users',
     component: UsersComponent,
     data: { title: 'Users List' }
@@ -62,6 +69,7 @@ const routes: Routes = [
     component: ClassesComponent,
     data: { title: 'Classes List' }
   },
+
   {
     path: 'Sections',
     component: SectionsComponent,
