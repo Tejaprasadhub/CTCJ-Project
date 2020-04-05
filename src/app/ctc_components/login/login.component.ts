@@ -21,10 +21,9 @@ export class LoginComponent implements OnInit {
     });
   }
   addLoginSubmit(): void {
-    if (this.addLoginForm.valid){
-      this.router.navigateByUrl("Students");
-      this.formSubmitAttempt = true;
-      
+     this.formSubmitAttempt = true;
+      if (this.addLoginForm.valid){     
+      this.router.navigateByUrl("Students");    
     }
   
 
