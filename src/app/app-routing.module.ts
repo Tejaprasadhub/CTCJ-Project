@@ -5,11 +5,14 @@ import { TeachersComponent } from './ctc_components/teachers/teachers.component'
 import { UsersComponent } from './ctc_components/users/users.component';
 import { ExamsComponent } from './ctc_components/exams/exams.component';
 import { ClassesComponent } from './ctc_components/classes/classes.component';
+import {SectionsComponent} from './ctc_components/sections/sections.component';
 import { StudentlayoutComponent } from './ctc_components/students/studentlayout/studentlayout.component';
 import { StudentdetailroutingModule } from './ctc_components/students/studentdetailrouting/studentdetailrouting.module';
 import { AddTeacherComponent } from './ctc_components/teachers/add-teacher/add-teacher.component';
 import { AddUserComponent } from './ctc_components/users/add-user/add-user.component';
+import {AddExamComponent} from './ctc_components/exams/add-exam/add-exam.component';
 import {ChangePasswordComponent} from './ctc_components/change-password/change-password.component';
+import { from } from 'rxjs';
 
 const routes: Routes = [
   {
@@ -50,9 +53,19 @@ const routes: Routes = [
     data: { title: 'Exams List' }
   },
   {
+    path: 'Exams/add-exam',
+    component: AddExamComponent,
+    data: { title: 'Exams List' }
+  },
+  {
     path: 'Classes',
     component: ClassesComponent,
     data: { title: 'Classes List' }
+  },
+  {
+    path: 'Sections',
+    component: SectionsComponent,
+    data: { title: 'Sections List' }
   },
   {
     path: 'ChangePassword',
