@@ -19,6 +19,10 @@ export class ExamsComponent implements OnInit {
   cols: any[];
   @ViewChild('myFiltersDiv') myFiltersDiv: ElementRef;
   loading: boolean;
+  errorMessage:string="";
+  successMessage:string="";
+  display:boolean=false;
+  position: string;
 
   constructor(private examsService: ExamsService, private router: Router) {
     this.exams = [];
@@ -54,6 +58,22 @@ export class ExamsComponent implements OnInit {
       this.myFiltersDiv.nativeElement.classList.remove('transform-active')
     else
       this.myFiltersDiv.nativeElement.classList.add('transform-active')
+  }
+
+  addNew($event:any){
+    this.router.navigateByUrl("Exams/add-exam?type=create");
+  }
+  editExam():void{
+    this.router.navigateByUrl("Exams/add-exam?type=edit&id=1");
+  }
+  deleteExam():void{
+    this.position="top";
+    this.display=true;
+    this.successMessage="";
+  }
+  examRevoke():void{
+    this.display=false;
+    this.successMessage="Exam deleted successfully"
   }
 
 }

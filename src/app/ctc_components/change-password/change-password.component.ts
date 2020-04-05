@@ -13,6 +13,7 @@ export class ChangePasswordComponent implements OnInit {
   formSubmitAttempt: boolean = false;
   errorMessage:string="";
   successMessage:string="";
+  isRequired:boolean=false;
 
   constructor(private fb: FormBuilder, private router: Router) { }
 
