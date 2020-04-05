@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginComponent } from './ctc_components/login/login.component';
 import { StudentsComponent } from './ctc_components/students/students.component';
 import { TeachersComponent } from './ctc_components/teachers/teachers.component';
 import { UsersComponent } from './ctc_components/users/users.component';
@@ -9,9 +10,6 @@ import { StudentlayoutComponent } from './ctc_components/students/studentlayout/
 import { StudentdetailroutingModule } from './ctc_components/students/studentdetailrouting/studentdetailrouting.module';
 import { AddTeacherComponent } from './ctc_components/teachers/add-teacher/add-teacher.component';
 import { AddUserComponent } from './ctc_components/users/add-user/add-user.component';
-
-
-
 const routes: Routes = [
   {
     path: 'Students',
@@ -36,6 +34,11 @@ const routes: Routes = [
     data: { title: 'Teachers List' }
   },
   {
+    path: 'Login',
+    component: LoginComponent,
+    data: { title: 'Login Details' }
+  }, 
+  {
     path: 'Users',
     component: UsersComponent,
     data: { title: 'Users List' }
@@ -56,7 +59,7 @@ const routes: Routes = [
     data: { title: 'Classes List' }
   },
   { path: '',
-    redirectTo: '/Students',
+    redirectTo: '/Userlogin',
     pathMatch: 'full'
   },
 ];
