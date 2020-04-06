@@ -19,6 +19,10 @@ import { ClassesComponent } from './ctc_components/classes/classes.component';
 
 
 // primeng module div section
+
+//Teja Prasad Section Starts
+import {MegaMenuModule} from 'primeng/megamenu';
+//Teja Prasad Section Ends
 import {CardModule} from 'primeng/card';
 import {ButtonModule} from 'primeng/button';
 import {TableModule} from 'primeng/table';
@@ -26,6 +30,9 @@ import {InputTextModule} from 'primeng/inputtext';
 import {DropdownModule} from 'primeng/dropdown';
 import {CalendarModule} from 'primeng/calendar';
 import {TabViewModule} from 'primeng/tabview';
+//Sindhu Section Starts
+
+//Sindhu Section Ends
 import {AccordionModule} from 'primeng/accordion';
 import {MultiSelectModule} from 'primeng/multiselect';
 import {CheckboxModule} from 'primeng/checkbox';
@@ -33,6 +40,9 @@ import {RadioButtonModule} from 'primeng/radiobutton';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {PasswordModule} from 'primeng/password'
 import {DialogModule} from 'primeng/dialog';
+//Chaitanya Section Starts
+
+//Chaitanya Section Ends
 
 import { StudentlayoutComponent } from './ctc_components/students/studentlayout/studentlayout.component';
 import { StudentprofileComponent } from './ctc_components/students/studentprofile/studentprofile.component';
@@ -95,6 +105,9 @@ import { AddClassComponent } from './ctc_components/classes/add-class/add-class.
     AddClassComponent    
   ],
   imports: [
+    //Teja Prasad Section Starts
+    MegaMenuModule,
+    //Teja Prasad Section Ends
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -103,6 +116,9 @@ import { AddClassComponent } from './ctc_components/classes/add-class/add-class.
     ButtonModule,
     TableModule,
     MultiSelectModule,
+          //Sindhu Section Starts
+
+      //Sindhu Section Ends
     BrowserAnimationsModule,
     CommonModule,
     InputTextModule,
@@ -115,6 +131,9 @@ import { AddClassComponent } from './ctc_components/classes/add-class/add-class.
     InputTextareaModule,
     PasswordModule,
     DialogModule
+      //Chaitanya Section Starts
+
+      //Chaitanya Section Ends
   ],
   providers: [],
   bootstrap: [AppComponent]

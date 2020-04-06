@@ -182,9 +182,6 @@ background-color: #635f5f59 !important;
   }  
   .transform-active {
       display: block;
-    //   visibility: visible;
-    //   opacity: 1;      
-    //   transition-delay: 10s !important;
   }
 
   .search-box{
@@ -212,6 +209,13 @@ background-color: #635f5f59 !important;
       position: absolute;
       right: 0px;
   }
+  .ui-megamenu{
+    background-color: #f8f9fa !important;
+    border:1px solid #f8f9fa !important;
+}
+.ui-menuitem-link {
+    font-weight: bold !important;
+}
   .ui-table .card,.ui-table .card:hover{
     cursor: pointer;
     background-color: #efefee !important;
