@@ -13,7 +13,9 @@ import { AddTeacherComponent } from './ctc_components/teachers/add-teacher/add-t
 import { AddUserComponent } from './ctc_components/users/add-user/add-user.component';
 import {AddExamComponent} from './ctc_components/exams/add-exam/add-exam.component';
 import {ChangePasswordComponent} from './ctc_components/change-password/change-password.component';
+import { DashboardComponent } from './ctc_components/dashboard/dashboard.component';
 import { from } from 'rxjs';
+
 
 
 const routes: Routes = [
@@ -78,6 +80,11 @@ const routes: Routes = [
   {
     path: 'ChangePassword',
     component: ChangePasswordComponent,
+    data: { title: 'Change Password' }
+  },
+  {
+    path: 'Dashboard',
+    component: DashboardComponent,
     data: { title: 'Change Password' }
   },
   {

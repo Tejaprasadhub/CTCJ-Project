@@ -50,13 +50,38 @@ export class MenubarComponent implements OnInit {
                     "items": []
                   }
                 ]
-              }
+              }              
+            ],
+            [
+              {
+                "label": "Additional",
+                "items": [
+                  {
+                    "label": "News",
+                    "url": "news",
+                    "items": []
+                  },
+                  {
+                    "label": "Achievements",
+                    "url": "achivements",
+                    "items": []
+                  }                  
+                ]
+              }              
             ]
           ]
         },
         {
           "label": "Role Access",
-          "url": "RoleAccess"
+          "url": "roleaccess"
+        },
+        {
+          "label": "Events",
+          "url": "events"
+        },
+        {
+          "label": "Fees",
+          "url": "fees"
         },
         {
           "label": "Statistics",

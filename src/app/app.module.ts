@@ -22,6 +22,10 @@ import { ClassesComponent } from './ctc_components/classes/classes.component';
 
 //Teja Prasad Section Starts
 import {MegaMenuModule} from 'primeng/megamenu';
+import {ChartModule} from 'primeng/chart';
+import {FullCalendarModule} from 'primeng/fullcalendar';
+import {CarouselModule} from 'primeng/carousel';
+
 //Teja Prasad Section Ends
 import {CardModule} from 'primeng/card';
 import {ButtonModule} from 'primeng/button';
@@ -65,6 +69,7 @@ import { AddStudentComponent } from './ctc_components/students/add-student/add-s
 import { AddSectionComponent } from './ctc_components/sections/add-section/add-section.component';
 import { AddExamComponent } from './ctc_components/exams/add-exam/add-exam.component';
 import { AddClassComponent } from './ctc_components/classes/add-class/add-class.component';
+import { FooterComponent } from './ctc_components/footer/footer.component';
 
 
 
@@ -102,11 +107,15 @@ import { AddClassComponent } from './ctc_components/classes/add-class/add-class.
     AddStudentComponent,
     AddSectionComponent,
     AddExamComponent,
-    AddClassComponent    
+    AddClassComponent,
+    FooterComponent    
   ],
   imports: [
     //Teja Prasad Section Starts
     MegaMenuModule,
+    ChartModule,
+    FullCalendarModule,
+    CarouselModule,
     //Teja Prasad Section Ends
     BrowserModule,
     AppRoutingModule,

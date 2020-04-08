@@ -3,6 +3,7 @@ body{
     background-color: #cccccc96;
     overflow-x: hidden;
 }
+
 .word-break{
     word-break:break-all;
 }
@@ -305,6 +306,15 @@ body .ui-table .ui-sortable-column .ui-sortable-column-icon {
 body .ui-paginator .ui-paginator-pages .ui-paginator-page.ui-state-active {
     background-color: #448fab !important;
     color: #ffffff !important;
+}
+
+body .fc .fc-toolbar .fc-button {
+    background-color: #448fab !important;
+    border: 1px solid #448fab !important;
+}
+body .fc .fc-event {
+    background-color: #008000 !important;
+    border: 1px solid #008000 !important;
 }
     
 //   table common styles ends here

@@ -1,12 +1,9 @@
 .tiles-section{
-    display: -webkit-inline-box;
-    width: 100%;
-    overflow-x: auto;
     margin-top: 10px;
-    margin-bottom: 20px;
 }
 .card{
-    width: 18rem;margin-right: 10px;
+    margin-right: 5px;
+    border-radius: 10px;
 }
 .card .fa{
     font-size: 60px;
@@ -14,16 +11,3 @@
 }
 
 
-
-
-
-
-//  ::-webkit-scrollbar {
-//     height: 0.5em
-// }
-// ::-webkit-scrollbar-button {
-//     background: #ccc
-// }
-::-webkit-scrollbar-track-piece {
-    background: red
-}
