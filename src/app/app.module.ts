@@ -19,6 +19,14 @@ import { ClassesComponent } from './ctc_components/classes/classes.component';
 
 
 // primeng module div section
+
+//Teja Prasad Section Starts
+import {MegaMenuModule} from 'primeng/megamenu';
+import {ChartModule} from 'primeng/chart';
+import {FullCalendarModule} from 'primeng/fullcalendar';
+import {CarouselModule} from 'primeng/carousel';
+
+//Teja Prasad Section Ends
 import {CardModule} from 'primeng/card';
 import {ButtonModule} from 'primeng/button';
 import {TableModule} from 'primeng/table';
@@ -26,6 +34,9 @@ import {InputTextModule} from 'primeng/inputtext';
 import {DropdownModule} from 'primeng/dropdown';
 import {CalendarModule} from 'primeng/calendar';
 import {TabViewModule} from 'primeng/tabview';
+//Sindhu Section Starts
+
+//Sindhu Section Ends
 import {AccordionModule} from 'primeng/accordion';
 import {MultiSelectModule} from 'primeng/multiselect';
 import {CheckboxModule} from 'primeng/checkbox';
@@ -33,6 +44,9 @@ import {RadioButtonModule} from 'primeng/radiobutton';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {PasswordModule} from 'primeng/password'
 import {DialogModule} from 'primeng/dialog';
+//Chaitanya Section Starts
+
+//Chaitanya Section Ends
 
 import { StudentlayoutComponent } from './ctc_components/students/studentlayout/studentlayout.component';
 import { StudentprofileComponent } from './ctc_components/students/studentprofile/studentprofile.component';
@@ -55,6 +69,7 @@ import { AddStudentComponent } from './ctc_components/students/add-student/add-s
 import { AddSectionComponent } from './ctc_components/sections/add-section/add-section.component';
 import { AddExamComponent } from './ctc_components/exams/add-exam/add-exam.component';
 import { AddClassComponent } from './ctc_components/classes/add-class/add-class.component';
+import { FooterComponent } from './ctc_components/footer/footer.component';
 
 
 
@@ -92,9 +107,16 @@ import { AddClassComponent } from './ctc_components/classes/add-class/add-class.
     AddStudentComponent,
     AddSectionComponent,
     AddExamComponent,
-    AddClassComponent    
+    AddClassComponent,
+    FooterComponent    
   ],
   imports: [
+    //Teja Prasad Section Starts
+    MegaMenuModule,
+    ChartModule,
+    FullCalendarModule,
+    CarouselModule,
+    //Teja Prasad Section Ends
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -103,6 +125,9 @@ import { AddClassComponent } from './ctc_components/classes/add-class/add-class.
     ButtonModule,
     TableModule,
     MultiSelectModule,
+          //Sindhu Section Starts
+
+      //Sindhu Section Ends
     BrowserAnimationsModule,
     CommonModule,
     InputTextModule,
@@ -115,6 +140,9 @@ import { AddClassComponent } from './ctc_components/classes/add-class/add-class.
     InputTextareaModule,
     PasswordModule,
     DialogModule
+      //Chaitanya Section Starts
+
+      //Chaitanya Section Ends
   ],
   providers: [],
   bootstrap: [AppComponent]
