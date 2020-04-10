@@ -20,21 +20,18 @@
                     size="30" pInputText class="required"
                     [ngClass]="{'error':((!addLoginForm.controls['password'].valid && addLoginForm.controls['password'].touched) || (!addLoginForm.controls['password'].valid && addLoginForm.controls['password'].untouched && formSubmitAttempt))}">
             </div>
-            <div class="m-2">
+           <div class="m-2">
                 <a href="" class="for text-center">Forgot Password</a>
             </div>
             <div class="m-2 text-center">
                 <button type="submit" class="btn btn-default btn-block btn-login">Login</button> 
             </div>
             <div class="col-md-12" *ngIf="(!addLoginForm.valid && formSubmitAttempt)">
+                
                 <p *ngIf="((addLoginForm.controls['userName'].errors?.required) || (addLoginForm.controls['password'].errors?.required))">Please Enter Username or Password</p>
                 <p *ngIf="((!addLoginForm.controls['userName'].errors?.required && addLoginForm.controls['userName'].errors?.pattern) || (!addLoginForm.controls['password'].errors?.required && addLoginForm.controls['password'].errors?.pattern))">Please Enter Valid Username or Password</p>
             </div> 
-                
-                 
-            
         </div>
-
         <div class="col-md-4"></div>
         <div class="col-md-4"></div>
         <div class="col-md-4 sup-div">

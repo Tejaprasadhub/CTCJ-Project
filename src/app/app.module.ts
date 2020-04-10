@@ -98,7 +98,7 @@ import { AddClassComponent } from './ctc_components/classes/add-class/add-class.
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule,  
     CardModule,
     ButtonModule,
     TableModule,
