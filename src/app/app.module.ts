@@ -136,7 +136,7 @@ import { AddNewsComponent } from './ctc_components/news/add-news/add-news.compon
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule,  
     CardModule,
     ButtonModule,
     TableModule,
