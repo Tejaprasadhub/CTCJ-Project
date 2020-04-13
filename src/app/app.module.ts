@@ -70,6 +70,14 @@ import { AddSectionComponent } from './ctc_components/sections/add-section/add-s
 import { AddExamComponent } from './ctc_components/exams/add-exam/add-exam.component';
 import { AddClassComponent } from './ctc_components/classes/add-class/add-class.component';
 import { FooterComponent } from './ctc_components/footer/footer.component';
+import { EventsComponent } from './ctc_components/events/events.component';
+import { FeesComponent } from './ctc_components/fees/fees.component';
+import { NewsComponent } from './ctc_components/news/news.component';
+import { AchievementsComponent } from './ctc_components/achievements/achievements.component';
+import { AddAchievementComponent } from './ctc_components/achievements/add-achievement/add-achievement.component';
+import { AddEventComponent } from './ctc_components/events/add-event/add-event.component';
+import { AddFeeComponent } from './ctc_components/fees/add-fee/add-fee.component';
+import { AddNewsComponent } from './ctc_components/news/add-news/add-news.component';
 
 
 
@@ -108,7 +116,15 @@ import { FooterComponent } from './ctc_components/footer/footer.component';
     AddSectionComponent,
     AddExamComponent,
     AddClassComponent,
-    FooterComponent    
+    FooterComponent,
+    EventsComponent,
+    FeesComponent,
+    NewsComponent,
+    AchievementsComponent,
+    AddAchievementComponent,
+    AddEventComponent,
+    AddFeeComponent,
+    AddNewsComponent    
   ],
   imports: [
     //Teja Prasad Section Starts
