@@ -68,7 +68,7 @@ export class TeachersComponent implements OnInit {
   deleteTeacher():void{
     this.position="top";
     this.display=true;
-    this.successMessage="";
+    this.successMessage=""; 
   }
   teacherRevoke():void{
     this.display=false;

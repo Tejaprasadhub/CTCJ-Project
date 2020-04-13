@@ -14,7 +14,10 @@ import { AddUserComponent } from './ctc_components/users/add-user/add-user.compo
 import {AddExamComponent} from './ctc_components/exams/add-exam/add-exam.component';
 import {ChangePasswordComponent} from './ctc_components/change-password/change-password.component';
 import { DashboardComponent } from './ctc_components/dashboard/dashboard.component';
+import { EventsComponent } from './ctc_components/events/events.component';
+
 import { from } from 'rxjs';
+import { AddEventComponent } from './ctc_components/events/add-event/add-event.component';
 
 
 
@@ -40,6 +43,16 @@ const routes: Routes = [
     path: 'Teachers/add-teacher',
     component: AddTeacherComponent,
     data: { title: 'Teachers List' }
+  },
+  {
+    path: 'events',
+    component: EventsComponent,
+    data: { title: 'Events List' }
+  },
+  {
+    path: 'Events/add-event',
+    component: AddEventComponent,
+    data: { title: 'Add Event' }
   },
   {
     path: 'Login',
