@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
      this.formSubmitAttempt = true;
       if (this.addLoginForm.valid){     
       // this.router.navigateByUrl("Students");    
-      this.router.navigate(['/Admin/Dashboard'], {relativeTo: this.route});
+      this.router.navigate(['/admin/dashboard'], {relativeTo: this.route});
     }
   
 

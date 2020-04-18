@@ -80,7 +80,7 @@ export class AddExamComponent implements OnInit {
 
   list(): void {
     // this.router.navigateByUrl("Exams");
-    this.router.navigate(['Exams'], {relativeTo: this.route});
+    this.router.navigate(['exams'], {relativeTo: this.route});
   }
 
 }

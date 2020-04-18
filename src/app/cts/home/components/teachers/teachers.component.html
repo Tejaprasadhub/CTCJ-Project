@@ -77,7 +77,7 @@
             <ng-template pTemplate="body" let-rowData let-columns="columns" let-expanded="expanded">
                 <tr>
                     <td *ngFor="let col of columns">
-                        <a class="bold" href="Teachers/add-teacher?type=view&id=1">{{rowData[col.field]}}</a>                        
+                        <a class="bold" href="Admin/Teachers/add-teacher?type=view&id=1">{{rowData[col.field]}}</a>                        
                     </td>
                     <td class="d-flex">
                         <i class="pi pi-pencil" (click)="editTeacher()"></i>&nbsp;

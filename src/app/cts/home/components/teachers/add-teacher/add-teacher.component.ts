@@ -7,6 +7,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { element } from 'protractor';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-add-teacher',
@@ -34,7 +36,7 @@ export class AddTeacherComponent implements OnInit {
   errorMessage:string="";
   successMessage:string="";
   
-  constructor(private fb: FormBuilder, private router: Router,private route:ActivatedRoute) {
+  constructor(private fb: FormBuilder, private router: Router,private route:ActivatedRoute,private location:Location) {
     this.gender = [
       { label: 'Male', value: 'M' },
       { label: 'Female', value: 'F' }
@@ -190,7 +192,8 @@ export class AddTeacherComponent implements OnInit {
   //navigating to Teachers list page
   list():void{
     // this.router.navigateByUrl("Teachers");
-    this.router.navigate(['Teachers'], {relativeTo: this.route});
+    this.location.back();
+    // this.router.navigate(['/Teachers'], {relativeTo: this.route});
   }
 
   //This is the method to clear all the form controllers

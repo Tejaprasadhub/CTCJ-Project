@@ -6,46 +6,19 @@ import {CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { HomeRoutingModule } from './home-routing.module';
+import { SharedroutingModule } from '../../shared/sharedrouting/sharedrouting.module';
+
 
 import { TopbarComponent } from '../../home/components/topbar/topbar.component';
 import { MenubarComponent } from '../../home/components/menubar/menubar.component';
 import { TilesComponent } from '../../home/components/tiles/tiles.component';
 import { StudentsComponent } from '../../home/components/students/students.component';
-import { TeachersComponent } from '../../home/components/teachers/teachers.component';
+// import { TeachersComponent } from '../../home/components/teachers/teachers.component';
 import { UsersComponent } from '../../home/components/users/users.component';
 import { ExamsComponent } from '../../home/components/exams/exams.component';
 import { ClassesComponent } from '../../home/components/classes/classes.component';
 
 
-// primeng module div section
-
-//Teja Prasad Section Starts
-import {MegaMenuModule} from 'primeng/megamenu';
-import {ChartModule} from 'primeng/chart';
-import {FullCalendarModule} from 'primeng/fullcalendar';
-import {CarouselModule} from 'primeng/carousel';
-
-//Teja Prasad Section Ends
-import {CardModule} from 'primeng/card';
-import {ButtonModule} from 'primeng/button';
-import {TableModule} from 'primeng/table';
-import {InputTextModule} from 'primeng/inputtext';
-import {DropdownModule} from 'primeng/dropdown';
-import {CalendarModule} from 'primeng/calendar';
-import {TabViewModule} from 'primeng/tabview';
-//Sindhu Section Starts
-
-//Sindhu Section Ends
-import {AccordionModule} from 'primeng/accordion';
-import {MultiSelectModule} from 'primeng/multiselect';
-import {CheckboxModule} from 'primeng/checkbox';
-import {RadioButtonModule} from 'primeng/radiobutton';
-import {InputTextareaModule} from 'primeng/inputtextarea';
-import {PasswordModule} from 'primeng/password'
-import {DialogModule} from 'primeng/dialog';
-//Chaitanya Section Starts
-
-//Chaitanya Section Ends
 
 import { StudentlayoutComponent } from '../../home/components/students/studentlayout/studentlayout.component';
 import { StudentprofileComponent } from '../../home/components/students/studentprofile/studentprofile.component';
@@ -53,7 +26,7 @@ import { StudenteditComponent } from '../../home/components/students/studentedit
 import { StudentreportsComponent } from '../../home/components/students/studentreports/studentreports.component';
 import { StudentmarksComponent } from '../../home/components/students/studentmarks/studentmarks.component';
 import { StudentmoreComponent } from '../../home/components/students/studentmore/studentmore.component';
-import { AddTeacherComponent } from '../../home/components/teachers/add-teacher/add-teacher.component';
+// import { AddTeacherComponent } from '../../home/components/teachers/add-teacher/add-teacher.component';
 import { AddUserComponent } from '../../home/components/users/add-user/add-user.component';
 import { ChangePasswordComponent } from '../../home/components/change-password/change-password.component';
 import { SectionsComponent } from '../../home/components/sections/sections.component';
@@ -80,11 +53,6 @@ import { LayoutComponent } from '../components/layout/layout.component';
 
 
 
-
-
-
-
-
 @NgModule({
   declarations: [
     LayoutComponent,
@@ -92,7 +60,7 @@ import { LayoutComponent } from '../components/layout/layout.component';
     MenubarComponent,
     TilesComponent,
     StudentsComponent,
-    TeachersComponent,
+    // TeachersComponent,
     UsersComponent,
     ExamsComponent,
     ClassesComponent,
@@ -102,7 +70,7 @@ import { LayoutComponent } from '../components/layout/layout.component';
     StudentreportsComponent,
     StudentmarksComponent,
     StudentmoreComponent,
-    AddTeacherComponent,
+    // AddTeacherComponent,
     AddUserComponent,
     ChangePasswordComponent,
     SectionsComponent,
@@ -132,41 +100,18 @@ import { LayoutComponent } from '../components/layout/layout.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,  
-    //Teja Prasad Section Starts
-    HomeRoutingModule,
-    MegaMenuModule,
-    ChartModule,
-    FullCalendarModule,
-    CarouselModule,
-    //Teja Prasad Section Ends
+    HomeRoutingModule,    
     BrowserModule,
     AppRoutingModule,
-    
-    CardModule,
-    ButtonModule,
-    TableModule,
-    MultiSelectModule,
-          //Sindhu Section Starts
-
-      //Sindhu Section Ends
-
-    InputTextModule,
-    DropdownModule,
-    CalendarModule,
-    TabViewModule,
-    AccordionModule,
-    CheckboxModule,
-    RadioButtonModule,
-    InputTextareaModule,
-    PasswordModule,
-    DialogModule,
-      //Chaitanya Section Starts
-
-      //Chaitanya Section Ends
+    SharedroutingModule,    
   ],
   exports:[
+    BrowserAnimationsModule,
+    CommonModule,
+    BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    
     LayoutComponent,
     TopbarComponent,
     MenubarComponent,

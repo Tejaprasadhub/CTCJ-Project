@@ -61,11 +61,11 @@ export class TeachersComponent implements OnInit {
 
   addNew($event:any){
     // this.router.navigateByUrl("Teachers/add-teacher?type=create");
-    this.router.navigate(['add-teacher?type=create'], {relativeTo: this.route});
+    this.router.navigate(['add-teacher'], {relativeTo: this.route,queryParams: { type: 'create'}});
   }
   editTeacher():void{
     // this.router.navigateByUrl("Teachers/add-teacher?type=edit&id=1");
-    this.router.navigate(['add-teacher?type=edit&id=1'], {relativeTo: this.route});
+    this.router.navigate(['add-teacher'],{relativeTo: this.route,queryParams: { type: 'edit', id: '1' }});
   }
   deleteTeacher():void{
     this.position="top";

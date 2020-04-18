@@ -22,11 +22,11 @@ import { LayoutComponent } from '../components/layout/layout.component';
 
 const homeRoutes: Routes = [
   {
-    path:'Admin',
+    path:'admin',
     component:LayoutComponent,
     children:[
       {
-        path: 'Students',
+        path: 'students',
         component: StudentsComponent,
         data: { title: 'Students List' },
         children: [
@@ -38,63 +38,64 @@ const homeRoutes: Routes = [
         ]
       },
       {
-        path: 'Teachers',
-        component: TeachersComponent,
-        data: { title: 'Teachers List' }
+        path: 'teachers',       
+        loadChildren: () => import('../components/teachers/teachers.module').then(m => m.TeachersModule),
+        // component: TeachersComponent,
+        // data: { title: 'Teachers List' }
       },
-      {
-        path: 'Teachers/add-teacher',
-        component: AddTeacherComponent,
-        data: { title: 'Teachers List' }
-      },
+      // {
+      //   path: 'Teachers/add-teacher',
+      //   component: AddTeacherComponent,
+      //   data: { title: 'Teachers List' }
+      // },
       {
         path: 'events',
         component: EventsComponent,
         data: { title: 'Events List' }
       },
       {
-        path: 'Events/add-event',
+        path: 'events/add-event',
         component: AddEventComponent,
         data: { title: 'Add Event' }
       }, 
       {
-        path: 'Users',
+        path: 'users',
         component: UsersComponent,
         data: { title: 'Users List' }
       },
       {
-        path: 'Users/add-user',
+        path: 'users/add-user',
         component: AddUserComponent,
         data: { title: 'Users List' }
       },
       {
-        path: 'Exams',
+        path: 'exams',
         component: ExamsComponent,
         data: { title: 'Exams List' }
       },
       {
-        path: 'Exams/add-exam',
+        path: 'exams/add-exam',
         component: AddExamComponent,
         data: { title: 'Exams List' }
       },
       {
-        path: 'Classes',
+        path: 'classes',
         component: ClassesComponent,
         data: { title: 'Classes List' }
       },
     
       {
-        path: 'Sections',
+        path: 'sections',
         component: SectionsComponent,
         data: { title: 'Sections List' }
       },
       {
-        path: 'ChangePassword',
+        path: 'changePassword',
         component: ChangePasswordComponent,
         data: { title: 'Change Password' }
       },
       {
-        path: 'Dashboard',
+        path: 'dashboard',
         component: DashboardComponent,
         data: { title: 'Change Password' }
       }

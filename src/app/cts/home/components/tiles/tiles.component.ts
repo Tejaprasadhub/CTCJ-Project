@@ -17,12 +17,12 @@ export class TilesComponent implements OnInit {
 
   ngOnInit(): void {
     this.MyTilesArray = [
-      new Tiles(565, 'Students','blue'),
-      new Tiles(56, 'Teachers','green'),
-      new Tiles(40, 'Users','lightblue'),
-      new Tiles(6, 'Exams','yellow'),
-      new Tiles(10, 'Classes','pink'),
-      new Tiles(24, 'Sections','blue')
+      new Tiles(565, 'students','blue'),
+      new Tiles(56, 'teachers','green'),
+      new Tiles(40, 'users','lightblue'),
+      new Tiles(6, 'exams','yellow'),
+      new Tiles(10, 'classes','pink'),
+      new Tiles(24, 'sections','blue')
     ];    
 
     this.responsiveOptions = [

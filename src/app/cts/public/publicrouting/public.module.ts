@@ -5,10 +5,6 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CommonModule } from '@angular/common';
 
-//primeng imports
-import {InputTextModule} from 'primeng/inputtext';
-
-
 //other imports
 import { PublicRoutingModule } from './public-routing.module';
 import { LoginComponent } from '../../public/components/login/login.component';
@@ -23,7 +19,7 @@ import { LoginComponent } from '../../public/components/login/login.component';
     FormsModule,
     ReactiveFormsModule,
     PublicRoutingModule,
-    InputTextModule
+    // InputTextModule
   ]
 })
 export class PublicModule { }

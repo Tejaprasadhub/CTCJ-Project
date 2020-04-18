@@ -98,7 +98,7 @@ eventOptions:any;
   }
   addNew($event:any){
     // this.router.navigateByUrl("Events/add-event?type=create");
-    this.router.navigate(['add-event?type=create'], {relativeTo: this.route});
+    this.router.navigate(['add-event'], {relativeTo: this.route,queryParams: { type: 'create'}});
   }
 
 }

@@ -55,7 +55,7 @@ export class UsersComponent implements OnInit {
   }
   addNew($event:any){
     // this.router.navigateByUrl("Users/add-user");
-    this.router.navigate(['Users/add-user'], {relativeTo: this.route});
+    this.router.navigate(['add-user'], {relativeTo: this.route});
   }
 
   public ngOnInit() {

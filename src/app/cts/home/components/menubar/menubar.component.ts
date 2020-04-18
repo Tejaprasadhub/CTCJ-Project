@@ -14,7 +14,7 @@ export class MenubarComponent implements OnInit {
     this.menuItems =[
         {
           "label": "About Us",
-          "url": "AboutUs"
+          "url": "admin/aboutUs"
         },
         {
           "label": "Date Entry",
@@ -26,27 +26,27 @@ export class MenubarComponent implements OnInit {
                 "items": [
                   {
                     "label": "Students",
-                    "url": "Students",
+                    "url": "admin/students",
                     "items": []
                   },
                   {
                     "label": "Teachers",
-                    "url": "Teachers",
+                    "url": "admin/teachers",
                     "items": []
                   },
                   {
                     "label": "Users",
-                    "url": "Users",
+                    "url": "admin/users",
                     "items": []
                   },
                   {
                     "label": "Exams",
-                    "url": "Exams",
+                    "url": "admin/exams",
                     "items": []
                   },
                   {
                     "label": "Classes",
-                    "url": "Classes",
+                    "url": "admin/classes",
                     "items": []
                   }
                 ]
@@ -58,12 +58,12 @@ export class MenubarComponent implements OnInit {
                 "items": [
                   {
                     "label": "News",
-                    "url": "news",
+                    "url": "admin/news",
                     "items": []
                   },
                   {
                     "label": "Achievements",
-                    "url": "achivements",
+                    "url": "admin/achivements",
                     "items": []
                   }                  
                 ]
@@ -73,27 +73,27 @@ export class MenubarComponent implements OnInit {
         },
         {
           "label": "Role Access",
-          "url": "roleaccess"
+          "url": "admin/roleaccess"
         },
         {
           "label": "Events",
-          "url": "events"
+          "url": "admin/events"
         },
         {
           "label": "Fees",
-          "url": "fees"
+          "url": "admin/fees"
         },
         {
           "label": "Statistics",
-          "url": "Statistics"
+          "url": "admin/statistics"
         },
         {
           "label": "Settings",
-          "url": "Settings"
+          "url": "admin/settings"
         },
         {
           "label": "Audit Logs",
-          "url": "auditlogs"
+          "url": "admin/auditlogs"
         }
       ]
   }

@@ -120,7 +120,7 @@ export class StudentsComponent implements OnInit {
 
     rowExpand(event,data){      
       let naviagateURL = "";
-      naviagateURL = "Students/student";  
+      naviagateURL = "/admin/students/student";  
       this.router.navigate([naviagateURL,{outlets:{detail:['student-profile']}}]);
     }
 

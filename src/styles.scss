@@ -3,6 +3,9 @@ body{
     background-color: #cccccc96;
     overflow-x: hidden;
 }
+.container-fluid{
+    margin-top: -30px !important;
+}
 
 .word-break{
     word-break:break-all;
@@ -18,7 +21,8 @@ body{
      color:#d69d33;    
  }
  .pink{
-     color:#e550d3a6;
+    //  color:#e550d3a6;
+    color:#e87722;
  }
  .green{
      color:green;
@@ -116,7 +120,8 @@ background-color: #635f5f59 !important;
      cursor: pointer;
  }
  .pink:hover:not(.fa),.pink:focus:not(.fa){
-     border: 2px solid #e550d3a6;
+    //  border: 2px solid #e550d3a6;
+     border: 2px solid #e87722;
      cursor: pointer;
  }
  .green:hover:not(.fa),.green:focus:not(.fa)

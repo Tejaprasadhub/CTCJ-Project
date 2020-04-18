@@ -62,11 +62,11 @@ export class ExamsComponent implements OnInit {
 
   addNew($event:any){
     // this.router.navigateByUrl("Exams/add-exam?type=create");
-    this.router.navigate(['add-exam?type=create'], {relativeTo: this.route});
+    this.router.navigate(['add-exam'], {relativeTo: this.route,queryParams: { type: 'create'}});
   }
   editExam():void{
     // this.router.navigateByUrl("Exams/add-exam?type=edit&id=1");
-    this.router.navigate(['add-exam?type=edit&id=1'], {relativeTo: this.route});
+    this.router.navigate(['add-exam'], {relativeTo: this.route,queryParams: { type: 'edit',id:'1'}});
   }
   deleteExam():void{
     this.position="top";
