@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { SelectItem } from 'primeng/api/selectitem';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+import { takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-add-student',
@@ -6,10 +12,174 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-student.component.scss']
 })
 export class AddStudentComponent implements OnInit {
+  pageTitle: string;
+  errorMessage: string = "";
+  successMessage: string = "";
+  private ngUnsubscribe = new Subject();
+  studentId: string;
+  formType: string;
+  editData: any;
+  isDisabled: boolean = false;
+  isRequired: boolean = false;
+  addStudentForm: FormGroup;
+  formSubmitAttempt: boolean = false;
+  gender: SelectItem[] = [];
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private fb: FormBuilder, private router: Router, private route: ActivatedRoute,private location:Location) {
+    this.gender = [
+      { label: 'Male', value: 'M' },
+      { label: 'Female', value: 'F' }
+    ];
   }
 
+  ngOnInit(): void {
+    this.route.queryParams.pipe(takeUntil(this.ngUnsubscribe)).subscribe(params => {
+      this.studentId = params['id'];
+      this.formType = params['type'];
+    });
+    //to create form with validations
+    this.createForm();
+    //to check whether the form to be created or updated
+    if (this.formType == "create") {
+      this.pageTitle = "Add Student";
+      this.isDisabled = false;
+      this.isRequired = true;
+    } else if (this.formType == "edit") {
+      this.pageTitle = "Edit Student";
+      this.editControls();
+      this.fetchData();
+    } else {
+      this.pageTitle = "View Details";
+      this.isDisabled = true;
+      this.isRequired = false;
+      this.fetchData();
+    }
+  }
+
+  createForm() {
+    this.addStudentForm = this.fb.group({
+      'firstName': new FormControl('', { validators: [Validators.required] }),
+      'middleName': new FormControl(''),
+      'lastName': new FormControl('', { validators: [Validators.required] }),
+      'dateofbirth': new FormControl('', { validators: [Validators.required] }),
+      'gender': new FormControl('', { validators: [Validators.required] }),
+      'joineddate': new FormControl('', { validators: [Validators.required] }),
+      'email': new FormControl('', { validators: [Validators.pattern('')] }),
+      'class': new FormControl('', { validators: [Validators.required] }),
+      'section': new FormControl('', { validators: [Validators.required] }),
+      'd_noc': new FormControl(''),
+      'streetc': new FormControl(''),
+      'countryc': new FormControl(''),
+      'statec': new FormControl(''),
+      'districtc': new FormControl(''),
+      'cityc': new FormControl(''),
+      'pincodec': new FormControl(''),
+      'homephn': new FormControl(''),
+      'mblno': new FormControl('', { validators: [Validators.required] }),
+      'd_nop': new FormControl(''),
+      'streetp': new FormControl(''),
+      'countryp': new FormControl(''),
+      'statep': new FormControl(''),
+      'districtp': new FormControl(''),
+      'cityp': new FormControl(''),
+      'pincodep': new FormControl(''),
+      'pfname': new FormControl(''),
+      'plname': new FormControl(''),
+      'pemail': new FormControl('')
+    });
+  }
+
+  editControls(): void {
+    this.isRequired = true;
+    this.isDisabled = false;
+    this.pageTitle = "Edit Student";
+  }
+
+  private fetchData() {
+    // this.loadGender(this.gender);
+    this.bindEditStudentDetails();
+  }
+
+  bindEditStudentDetails() {
+    this.editData = {
+      'firstName': "Sindhuja",
+      'middleName': "",
+      'lastName': "Chinchilam",
+      'dateofbirth': "07/25/1995",
+      'gender': "F",
+      'joineddate': "01/01/2020",
+      'email': "chinchilam@gmail.com",
+      'class': "6",
+      'section': "A",
+      'd_noc': "24/7",
+      'streetc': "padmavathi nagar",
+      'countryc': "india",
+      'statec': "AP",
+      'districtc': "vzm",
+      'cityc': 'vzm',
+      'pincodec': "535002",
+      'homephn': "786876",
+      'mblno': "897882332",
+      'd_nop': "24/7",
+      'streetp': "padmavathi nagar",
+      'countryp':  "india",
+      'statep': "AP",
+      'districtp': "vzm",
+      'cityp': "vzm",
+      'pincodep': "535002",
+      'pfname': "teja",
+      'plname': "behara",
+      'pemail': "teja@gmail.com"
+    }
+
+    this.addStudentForm.setValue({
+      'firstName': this.editData.firstName,
+      'middleName': this.editData.middleName,
+      'lastName': this.editData.lastName,
+      'dateofbirth': this.editData.dateofbirth,
+      'gender': this.editData.gender,
+      'joineddate': this.editData.joineddate,
+      'email': this.editData.email,
+      'class': this.editData.class,
+      'section': this.editData.section,
+      'd_noc': this.editData.d_noc,
+      'streetc': this.editData.streetc,
+      'countryc': this.editData.countryc,
+      'statec': this.editData.statec,
+      'districtc': this.editData.districtc,
+      'cityc': this.editData.cityc,
+      'pincodec': this.editData.pincodec,
+      'homephn': this.editData.homephn,
+      'mblno': this.editData.mblno,
+      'd_nop': this.editData.d_nop,
+      'streetp': this.editData.streetp,
+      'countryp': this.editData.countryp,
+      'statep': this.editData.statep,
+      'districtp': this.editData.districtp,
+      'cityp': this.editData.cityp,
+      'pincodep': this.editData.pincodep,
+      'pfname': this.editData.pfname,
+      'plname': this.editData.plname,
+      'pemail': this.editData.pemail
+    })
+  }
+  addStudentSubmit(): void {
+    this.errorMessage = "";
+    this.successMessage = "";
+    this.formSubmitAttempt = true;
+    if (this.addStudentForm.valid) {
+      this.formSubmitAttempt = false;
+      console.log(this.addStudentForm.value);
+      this.addStudentForm.reset();
+      this.successMessage = "Your changes have been successfully saved";
+    }
+  }
+  list(): void {
+    // this.router.navigateByUrl("Teachers");
+    this.location.back();
+  }
+  resetForm(): void {
+    this.addStudentForm.reset();
+    this.successMessage = "";
+  }
 }
