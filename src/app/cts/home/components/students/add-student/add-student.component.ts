@@ -70,22 +70,31 @@ export class AddStudentComponent implements OnInit {
       'd_noc': new FormControl(''),
       'streetc': new FormControl(''),
       'countryc': new FormControl(''),
-      'statec': new FormControl(''),
+      'statec': new FormControl('',{ validators: [Validators.required] }),
       'districtc': new FormControl(''),
-      'cityc': new FormControl(''),
+      'cityc': new FormControl('',{ validators: [Validators.required] }),
       'pincodec': new FormControl(''),
       'homephn': new FormControl(''),
       'mblno': new FormControl('', { validators: [Validators.required] }),
       'd_nop': new FormControl(''),
       'streetp': new FormControl(''),
       'countryp': new FormControl(''),
-      'statep': new FormControl(''),
+      'statep': new FormControl('',{ validators: [Validators.required] }),
       'districtp': new FormControl(''),
-      'cityp': new FormControl(''),
+      'cityp': new FormControl('',{ validators: [Validators.required] }),
       'pincodep': new FormControl(''),
-      'pfname': new FormControl(''),
-      'plname': new FormControl(''),
-      'pemail': new FormControl('')
+      'pfname': new FormControl('',{ validators: [Validators.required] }),
+      'plname': new FormControl('',{ validators: [Validators.required] }),
+      'pmobile': new FormControl('',{ validators: [Validators.required] }),
+      'pemail': new FormControl(''),
+      'e1fname': new FormControl(''),
+      'e1lname': new FormControl(''),
+      'e1mobile': new FormControl(''),
+      'e1email': new FormControl(''),
+      'e2fname': new FormControl(''),
+      'e2lname': new FormControl(''),
+      'e2mobile': new FormControl(''),
+      'e2email': new FormControl('')
     });
   }
 
@@ -129,7 +138,16 @@ export class AddStudentComponent implements OnInit {
       'pincodep': "535002",
       'pfname': "teja",
       'plname': "behara",
-      'pemail': "teja@gmail.com"
+      'pemail': "teja@gmail.com",
+      'pmobile': "9640938361",
+      'e1fname': "teja",
+      'e1lname': "behara",
+      'e1email': "teja@gmail.com",
+      'e1mobile': "9640938361",
+      'e2fname': "teja",
+      'e2lname': "behara",
+      'e2email': "teja@gmail.com",
+      'e2mobile': "9640938361"
     }
 
     this.addStudentForm.setValue({
@@ -160,7 +178,16 @@ export class AddStudentComponent implements OnInit {
       'pincodep': this.editData.pincodep,
       'pfname': this.editData.pfname,
       'plname': this.editData.plname,
-      'pemail': this.editData.pemail
+      'pemail': this.editData.pemail,
+      'pmobile':this.editData.pmobile,
+      'e1fname': this.editData.e1fname,
+      'e1lname': this.editData.e1lname,
+      'e1email': this.editData.e1email,
+      'e1mobile':this.editData.e1mobile,
+      'e2fname': this.editData.e2fname,
+      'e2lname': this.editData.e2lname,
+      'e2email': this.editData.e2email,
+      'e2mobile':this.editData.e2mobile
     })
   }
   addStudentSubmit(): void {
